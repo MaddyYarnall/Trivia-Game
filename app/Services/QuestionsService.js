@@ -9,6 +9,11 @@ async getAllQuestions(){
   let questions = res.data.results.map(q => new Question(q))
   ProxyState.questions = questions
 }
+
+function answerButton(){
+
+}
+
 }
 
 export const questionsService = new QuestionsService() 

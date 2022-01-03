@@ -4,11 +4,16 @@ import { questionsService } from "../Services/QuestionsService.js";
 
 
 
+
 function _drawQuestions(){
   let questions = ProxyState.questions
   let template = ''
   questions.forEach(q => template += q.Template)
   document.getElementById('questions').innerHTML = template
+}
+
+function answerButton(){
+  questionsService.answerButton()
 }
 
 export class QuestionsController{
