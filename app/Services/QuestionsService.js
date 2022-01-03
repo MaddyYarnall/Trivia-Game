@@ -10,10 +10,16 @@ async getAllQuestions(){
   ProxyState.questions = questions
 }
 
-function answerButton(){
-
+answerButton(id, guess){
+let found = ProxyState.questions.find(q => q.id == id)
+console.log(found)
+if (found.correct == guess){
+  console.log('yay')
+  alert('That is Correct!')
+}else{
+  alert('Wrong! Try again!')
 }
 
 }
-
+}
 export const questionsService = new QuestionsService() 

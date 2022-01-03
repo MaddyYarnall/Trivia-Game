@@ -12,14 +12,15 @@ function _drawQuestions(){
   document.getElementById('questions').innerHTML = template
 }
 
-function answerButton(){
-  questionsService.answerButton()
-}
 
 export class QuestionsController{
-constructor() {
-  ProxyState.on('questions', _drawQuestions)
-
-  questionsService.getAllQuestions()
-}
+  constructor() {
+    ProxyState.on('questions', _drawQuestions)
+    
+    questionsService.getAllQuestions()
+  }
+  answerButton(id, guess){
+    console.log(id, guess)
+    questionsService.answerButton(id, guess)
+  }
 }
